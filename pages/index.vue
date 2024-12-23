@@ -12,9 +12,7 @@
             <ElInputNumber v-model="count" style="width: 100%;" />
         </ElCol>
         <ElCol :span="2">
-            <ElButton @click="() => {
-                finance.add(department, count);
-            }">确认</ElButton>
+            <ElButton @click="addBudget">确认</ElButton>
         </ElCol>
     </ElRow>
 
@@ -28,4 +26,15 @@ import type { departmentType } from '~/types';
 const finance = financeState();
 const department = ref<departmentType>('production');
 const count = ref(0);
+
+function addBudget() {
+    const current = finance[department.value];
+    /**判断预算不足处理 */
+    if (finance.cash.total < current.used + count.value) {
+        ElMessage.error('预算不足');
+        return;
+    }
+    finance.add(department.value, count.value);
+}
+
 </script>

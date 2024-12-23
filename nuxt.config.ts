@@ -2,5 +2,5 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: {enabled: true},
-  modules: ["@element-plus/nuxt", "@pinia/nuxt", "@pinia-plugin-persistedstate/nuxt"],
+  modules: ["@element-plus/nuxt", "@pinia/nuxt", "pinia-plugin-persistedstate/nuxt"],
 });

@@ -1,5 +1,5 @@
 import {defineStore} from "pinia";
-import type {departmentType} from "./types";
+import type {departmentType, productLineType} from "./types";
 
 export const financeState = defineStore("finance", {
   state: () => ({
@@ -15,26 +15,35 @@ export const financeState = defineStore("finance", {
       total: 0,
       used: 0,
     },
-    store: {
-      total: 400000,
+    cash: {
+      total: 500000,
       used: 0,
     },
   }),
   actions: {
     /**拨预算 */
     add(department: departmentType, count: number) {
-      this.store.total -= count;
-      this.store.used += count;
+      this.cash.total -= count;
+      this.cash.used += count;
       this[department].total += count;
     },
     /**用钱 */
     use(department: departmentType, count: number) {
       const current = this[department];
-      /**余额 */
-      const balance = current.total - current.used;
       current.used += count;
       current.total -= count;
     },
   },
-  persist: false,
+  persist: {
+    key: "finance",
+  },
+});
+
+export const productionState = defineStore("production", {
+  state: () => ({
+    lines: [] as productLineType[],
+  }),
+  persist: {
+    key: "productLine",
+  },
 });
