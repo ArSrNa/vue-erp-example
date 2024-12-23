@@ -1,0 +1,125 @@
+body {
+  margin: 0 !important;
+}
+
+.para-table {
+  border-collapse: collapse;
+  /* border-spacing: 15px 10px; */
+  border-radius: 5px;
+  width: 100%;
+}
+
+.para-td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.para-thead {
+  font-weight: 400;
+  height: 45px;
+  background-color: rgb(250, 250, 250);
+  color: black;
+}
+
+.code {
+  font-family: JetBrainsMono;
+  border: #ccc 1px dashed;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+
+.hdpic {
+  width: 100%;
+  height: 350px;
+  z-index: -1;
+  justify-content: center;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.lead {
+  font-size: 1.1rem;
+  font-weight: 100;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px) saturate(1.8);
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 30px;
+  padding-left: 0;
+  padding-inline: 25px;
+}
+
+.nav-bar {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 205391051;
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+}
+
+.bg-img {
+  height: 100%;
+  justify-content: center;
+  object-fit: cover;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.login-container {
+  position: absolute;
+  z-index: 5;
+  background-color: rgba($color: #ffffff, $alpha: 0.6);
+  transition: all 0.5s;
+  backdrop-filter: blur(5px) saturate(180%);
+  &:hover {
+    backdrop-filter: blur(20px) saturate(180%);
+  }
+  border-radius: 8px;
+  padding: 2% 8%;
+  min-width: 300px;
+  min-height: 250px;
+}
+
+.assets-input-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  @media (min-width: 720px) {
+    display: grid;
+    grid-template-columns: 50px 5fr 200px;
+  }
+}
+
+.footer-text {
+  color: var(--el-color-info);
+  font-size: small;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
